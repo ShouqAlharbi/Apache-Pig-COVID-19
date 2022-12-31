@@ -1,8 +1,8 @@
 # Apache-Pig-COVID-19
 
 we applied Pig Latin to the covid-19 dataset
-First: I cleaned the dataset and publish the dataset after cleaning
-Secondly, I made some questions to extract their answers from the huge data set.
+First: we cleaned the dataset and publish the dataset after cleaning
+Secondly, we made some questions to extract their answers from the huge data set.
 
 Apache Pig is an open-source platform for data processing and analysis. It is an efficient tool for data manipulation and analysis, and it is used in many industries such as finance, healthcare, and retail. Apache Pig provides a data flow language called Pig Latin which allows developers to express complex data processing operations in a single line of code. This makes it extremely useful for analyzing large datasets and automating workflows. 
 Furthermore, Apache Pig is easy to use, with a wide range of functions and libraries that are readily available. It is highly reliable and secure, and it supports multiple data formats such as CSV, JSON, Avro, and Parquet. 
