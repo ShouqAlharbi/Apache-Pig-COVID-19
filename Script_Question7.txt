@@ -1,0 +1,10 @@
+Load_data = LOAD '/user/maria_dev/Covie_19/Covid_df.txt'
+USING PigStorage(',') as (USMER:int,MEDICAL_UNIT:int,SEX:int,PATIENT_TYPE:chararray,
+PNEUMONIA:int,AGE:int,PREGNANT:int,DIABETES:int,COPD:int,ASTHMA:int,INMSUPR:int,
+HIPERTENSION:int,OTHER_DISEASE:int,CARDIOVASCULAR:int,OBESITY:int,RENAL_CHRONIC:int,
+TOBACCO:int,CLASIFFICATION_FINAL:int,DEATH:int);
+data_foreach = FOREACH Load_data GENERATE AGE,ASTHMA,DEATH ;
+has_asthma= FILTER data_foreach BY ASTHMA == 1;
+is_recovered= FILTER has_asthma BY DEATH == 2;
+filterPatient = FILTER is_recovered BY AGE < 40;
+DUMP filterPatient;

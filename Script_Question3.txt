@@ -1,0 +1,8 @@
+Load_data = LOAD '/user/maria_dev/Covie_19/Covid_df.txt'
+USING PigStorage(',') as (USMER:int,MEDICAL_UNIT:int,SEX:int,PATIENT_TYPE:chararray,
+PNEUMONIA:int,AGE:int,PREGNANT:int,DIABETES:int,COPD:int,ASTHMA:int,INMSUPR:int,
+HIPERTENSION:int,OTHER_DISEASE:int,CARDIOVASCULAR:int,OBESITY:int,RENAL_CHRONIC:int,
+TOBACCO:int,CLASIFFICATION_FINAL:int,DEATH:int);
+data_foreach = FOREACH Load_data GENERATE SEX,PATIENT_TYPE,AGE,DIABETES;
+has_diabete= FILTER data_foreach BY DIABETES == 1;
+DUMP has_diabete;
